@@ -18,7 +18,7 @@ for fn in os.listdir(trainDir):
 	else:
 		continue
 	samples = mp3.samplesFromFile(trainDir + fn)
-	feature = mp3.getFeatures2(samples)
+	feature = mp3.getFeatures(samples)
 	features += [feature]
 
 feats = np.array(features)
@@ -26,5 +26,5 @@ labs = np.array(labels)
 print(feats)
 print(labs)
 print(feats.shape, labs.shape)
-pickle.dump(feats, open('X2ClassSimple2.pkl', 'wb'))
-pickle.dump(labs, open('y2ClassSimple2.pkl', 'wb'))
+pickle.dump(feats, open('X2Cs.pkl', 'wb'))
+pickle.dump(labs, open('y2Cs.pkl', 'wb'))
