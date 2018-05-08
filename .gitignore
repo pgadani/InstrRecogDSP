@@ -1,3 +1,8 @@
+# Specific for Music
+*.mp3
+*.zip
+*.aiff
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
