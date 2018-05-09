@@ -4,7 +4,7 @@ import os, pickle, glob
 from sklearn import neighbors
 from sklearn.utils import shuffle
 from sklearn.model_selection import train_test_split
-from newExtractFeatures import extractFeatures
+from extractMFCCFeatures import extractFeatures
 
 trainRatio = .8
 nKNN = 10
@@ -16,8 +16,8 @@ def main():
 	y = np.array([f[15] for f in files])
 	X = extractFeatures(files)
 
-	pickle.dump(X, open('XMFCC.pkl', 'wb'))
-	pickle.dump(y, open('yMFCC.pkl', 'wb'))
+	pickle.dump(X, open('featureData/XMFCC.pkl', 'wb'))
+	pickle.dump(y, open('featureData/yMFCC.pkl', 'wb'))
 
 
 if __name__ == '__main__':

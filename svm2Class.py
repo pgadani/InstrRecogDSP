@@ -5,11 +5,18 @@ from sklearn import svm
 from sklearn.model_selection import train_test_split
 
 trainRatio = .8
-dataDir = '2Cs2.pkl'
+featType = 'MFCC' # 'Simple9', 'Simple18'
 
 def main():
-	X = pickle.load(open('X' + dataDir, 'rb'), encoding='latin1')
-	y = pickle.load(open('y' + dataDir, 'rb'), encoding='latin1')
+	if featType = 'Simple9':
+		fileSet = '2Cs'
+	elif featType = 'Simple18':
+		fileSet = '2Cs2'
+	else:
+		fileSet = 'MFCC'
+
+	X = pickle.load(open('featureData/X' + fileSet + '.pkl', 'rb'), encoding='latin1')
+	y = pickle.load(open('featureData/y' + fileSet + '.pkl', 'rb'), encoding='latin1')
 
 	Xtrain, Xtest, ytrain, ytest = train_test_split(X, y, test_size=trainRatio, shuffle=True)
 
