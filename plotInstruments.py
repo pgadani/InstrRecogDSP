@@ -10,7 +10,7 @@ def plotInstruments():
 	for fn in os.listdir(trainDir):
 		print(fn)
 		fns = fn.split('_')
-		if fns[1][-1] == '7':
+		if fns[1][-1] == '7': #ignore octaves above 6 because it would require a much larger FFT to accurately capture features
 			continue
 		samples = mp3.samplesFromFile(trainDir + fn)
 		features = mp3.getFeatures(samples)

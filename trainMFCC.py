@@ -13,13 +13,7 @@ instrLabels = {'v': 0, 't': 1}
 
 def main():
 	files = glob.glob("./trainingData/*.mp3")
-	y = np.zeros(len(files))
-
-	for i, f in enumerate(files):
-		y[i] = instrLabels[f[15]]
-
-
-	# files, y = shuffle(files, y)
+	y = np.array([f[15] for f in files])
 	X = extractFeatures(files)
 
 	pickle.dump(X, open('XMFCC.pkl', 'wb'))
