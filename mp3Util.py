@@ -58,16 +58,16 @@ def getFeatures2(samples):
 
 
 if __name__ == '__main__':
-	vSamples = samplesFromFile("v1.mp3")
-	plotSamples(vSamples, sub=221)
+	# vSamples = samplesFromFile("v1.mp3")
+	# plotSamples(vSamples, sub=221)
 
-	tSamples = samplesFromFile("t1.mp3")
+	tSamples = samplesFromFile("t/t_A3_1.mp3")
 	plotSamples(tSamples, sub=223)
 
 	plt.savefig('vtfft.png')
 	plt.show()
 
-	vPeaks = getFeatures(vSamples)
+	# vPeaks = getFeatures(vSamples)
 	tPeaks = getFeatures(tSamples)
 
 	plt.plot([i for i in range(len(vPeaks))], vPeaks, 'b')

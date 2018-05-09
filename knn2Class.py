@@ -1,4 +1,3 @@
-import mp3Util as mp3
 from matplotlib import pyplot as plt
 import numpy as np
 import os, pickle
@@ -6,8 +5,8 @@ from sklearn import neighbors
 from sklearn.model_selection import train_test_split
 
 trainRatio = .8
-dataDir = '2Cs.pkl'
-nKNN = 1
+dataDir = 'MFCC.pkl'
+nKNN = 10 # 5 - 80% ish
 
 def main():
 	X = pickle.load(open('X' + dataDir, 'rb'), encoding='latin1')
