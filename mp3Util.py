@@ -58,17 +58,17 @@ def getFeatures2(samples):
 
 
 if __name__ == '__main__':
-	vSamples = samplesFromFile("v1.mp3")
-	plotSamples(vSamples, sub=221)
+	# vSamples = samplesFromFile("v1.mp3")
+	# plotSamples(vSamples, sub=221)
 
-	tSamples = samplesFromFile("t1.mp3")
+	tSamples = samplesFromFile("t/t_A3_1.mp3")
 	plotSamples(tSamples, sub=223)
 
 	plt.show()
 
-	vPeaks = getFeatures(vSamples)
+	# vPeaks = getFeatures(vSamples)
 	tPeaks = getFeatures(tSamples)
 
-	plt.plot(vPeaks)
+	# plt.plot(vPeaks)
 	plt.plot(tPeaks)
 	plt.show()
