@@ -64,11 +64,15 @@ if __name__ == '__main__':
 	tSamples = samplesFromFile("t1.mp3")
 	plotSamples(tSamples, sub=223)
 
+	plt.savefig('vtfft.png')
 	plt.show()
 
 	vPeaks = getFeatures(vSamples)
 	tPeaks = getFeatures(tSamples)
 
-	plt.plot(vPeaks)
-	plt.plot(tPeaks)
+	plt.plot([i for i in range(len(vPeaks))], vPeaks, 'b')
+	plt.plot([i for i in range(len(tPeaks))], tPeaks, 'r')
+	plt.title('Violin vs Trumpet Features')
+	plt.legend(['violin', 'trumpet'])
+	plt.savefig('vtnaivefeature.png')
 	plt.show()

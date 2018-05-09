@@ -6,13 +6,13 @@ from sklearn import neighbors
 from sklearn.model_selection import train_test_split
 
 trainRatio = .8
-dataDir = '2Cs2.pkl'
-nKNN = 30
+dataDir = '2Cs.pkl'
+nKNN = 1
 
 def main():
 	X = pickle.load(open('X' + dataDir, 'rb'), encoding='latin1')
 	y = pickle.load(open('y' + dataDir, 'rb'), encoding='latin1')
-	print(X, y)
+	# print(X, y)
 
 	# class0 = X[y==0]
 	# class1 = X[y==1]

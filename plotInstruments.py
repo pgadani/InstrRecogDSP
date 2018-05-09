@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 import os
 
-trainDir = 'trainingData/'
+trainDir = 'trainingDataOld/'
 
 
 def plotInstruments():
@@ -15,6 +15,8 @@ def plotInstruments():
 		samples = mp3.samplesFromFile(trainDir + fn)
 		features = mp3.getFeatures(samples)
 		plt.plot([i for i in range(len(features))], features, 'r' if fn[0]=='t' else 'b')
+	plt.title('Violin vs Trumpet Features')
+	plt.savefig('vtfull.png')
 	plt.show()
 
 
