@@ -5,7 +5,7 @@ from sklearn import svm
 from sklearn.model_selection import train_test_split
 
 trainRatio = .8
-dataDir = '2Cs2.pkl'
+dataDir = 'MFCC.pkl'
 
 def main():
 	X = pickle.load(open('X' + dataDir, 'rb'), encoding='latin1')
