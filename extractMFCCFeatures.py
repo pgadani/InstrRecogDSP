@@ -5,8 +5,6 @@ from sklearn import preprocessing
 
 import mp3Util as mp3
 
-from speechRecog import mfcc
-
 def trimSound(sound, threshold = 0.001):
 	maxAmp = max(sound)
 	start = len(sound)
@@ -22,7 +20,7 @@ def trimSound(sound, threshold = 0.001):
 	return start, end
 
 
-def mfccOurs(sound, sr, frameSize=0.023, frameStride=0.01, nfft=512, nfilt=26, nCoeff=12):
+def mfcc(sound, sr, frameSize=0.023, frameStride=0.01, nfft=512, nfilt=26, nCoeff=12):
 	sigLen = sound.shape[0]
 	frameLen = int(frameSize*sr)
 	frameStep = int(frameStride*sr)
@@ -65,14 +63,12 @@ def mfccOurs(sound, sr, frameSize=0.023, frameStride=0.01, nfft=512, nfilt=26, n
 def extractFeatures(fileList, nfeat=20):
 	sr = 22050
 	features = np.zeros((len(fileList), nfeat))
-	# print(fileList)
+
 	for i,f in enumerate(fileList):
 		sound = mp3.samplesFromFile(f)
 		start, end = trimSound(sound)
 		tr_sound = sound[start:end]
-		# mfccs = mfcc(tr_sound, samplerate=sr, winlen=0.023)
-		mfccs = mfccOurs(tr_sound, sr, nCoeff=nfeat)
-		# print(mfccs.shape)
+		mfccs = mfcc(tr_sound, sr, nCoeff=nfeat)
 		avg = np.mean(mfccs, axis=0)
 		features[i,:] = avg
 

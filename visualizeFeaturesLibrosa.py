@@ -21,9 +21,7 @@ def trimSound(sound, threshold = 0.001):
 
 
 def extractFeatures(fileList):
-	# sr = 44100
 	features = np.zeros((len(fileList), 20))
-	# print(fileList)
 	for i,f in enumerate(fileList):
 		sound, sr = librosa.load(f)
 		start, end = trimSound(sound)
