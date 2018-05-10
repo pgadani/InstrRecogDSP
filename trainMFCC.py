@@ -16,8 +16,8 @@ def main():
 	y = np.array([f[15] for f in files])
 	X = extractFeatures(files)
 
-	pickle.dump(X, open('featureData/XMFCC.pkl', 'wb'))
-	pickle.dump(y, open('featureData/yMFCC.pkl', 'wb'))
+	pickle.dump(X, open('featureData/XMFCCt.pkl', 'wb'))
+	pickle.dump(y, open('featureData/yMFCCt.pkl', 'wb'))
 
 
 if __name__ == '__main__':

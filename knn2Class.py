@@ -9,9 +9,9 @@ nKNN = 1
 featType = 'MFCC' # 'Simple9', 'Simple18'
 
 def main():
-	if featType = 'Simple9':
+	if featType == 'Simple9':
 		fileSet = '2Cs'
-	elif featType = 'Simple18':
+	elif featType == 'Simple18':
 		fileSet = '2Cs2'
 	else:
 		fileSet = 'MFCC'
